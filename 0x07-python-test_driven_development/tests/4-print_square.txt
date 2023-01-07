@@ -1,0 +1,73 @@
+The ``4-print_square`` module
+=================================
+
+Testing ``4-print_square`` function
+-----------------------------------
+
+[*] Import function from the module
+    >>> print_square = __import__('4-print_square').print_square
+
+[*] Module and function should have a doc
+    >>> len(__import__('4-print_square').__doc__) > 0
+    True
+    >>> len(print_square.__doc__) > 0
+    True
+
+[*] Check usage
+- Print a square with length = 1
+	>>> print_square(1)
+	#
+
+- Print a square with length = 2
+    >>> print_square(2)
+    ##
+    ##
+
+- Print a square with length = 4
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+- Print a square with length = 0
+    >>> print_square(0)
+
+[*] Argument checks
+- Size must not be less than 0
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+- Size can't be a tuple
+    >>> print_square((0, ))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+- Size can't be a float
+    >>> print_square(2.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+-  Size can't be a string
+    >>> print_square("2")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+- Size can't be a dictionary
+    >>> print_square({ "a": 1, "b": 2 })
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+- Missing one arguments
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+Footer
+© 2023 GitHub, Inc.
