@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Module lazy_matrix_mul"""
 import numpy
 
@@ -42,6 +41,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError('m_a and m_b can\'t be multiplied')
 
     return numpy.matrix(m_a) * numpy.matrix(m_b)
+
 
 if __name__ == '__main__':
     import doctest
