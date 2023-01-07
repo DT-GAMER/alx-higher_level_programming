@@ -1,0 +1,56 @@
+The ``3-say_my_name`` module
+=================================
+
+Testing ``3-say_my_name`` function
+-----------------------------------
+
+[*] Import function from the module
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+[*] Module and function should have a doc
+    >>> len(__import__('3-say_my_name').__doc__) > 0
+    True
+    >>> len(say_my_name.__doc__) > 0
+    True
+
+[*] Result must be a greeting: Second Argument is optional
+- Passing in two parameters
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+- Passing in one parameter
+    >>> say_my_name("John")
+    My name is John 
+    >>> say_my_name('A'*2 + 'n')
+    My name is AAn 
+
+[*] Function can only take in string
+- Passing in an integer
+    >>> say_my_name(1, "Doe")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+- Passing in a boolean
+    >>> say_my_name("John", False)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+- Passing in a list
+    >>> say_my_name([])
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+- Passing in a string and a dictionary
+    >>> say_my_name("John", {"a": 1, "b": 2})
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+- Missing two parameters
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
